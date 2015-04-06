@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["HASHBYTES",""],["KEYBYTES",""]],"struct":[["Digest","Digest-structure"],["Key","Key"]],"fn":[["gen_key","`gen_key()` randomly generates a key for shorthash"],["shorthash","`shorthash` hashes a message `m` under a key `k`. It returns a hash `h`."]]});
