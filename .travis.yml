@@ -9,6 +9,9 @@ language: rust
 rust:
   - stable
   - nightly
+matrix:
+  allow_failures:
+    - rust: nightly
 sudo: false
 branches:
   only:
@@ -17,7 +20,10 @@ branches:
 cache:
   cargo: true
 script:
-  - if [[ $TRAVIS_RUST_VERSION = stable ]]; then
+  - sh: |
+    set -o errtrace
+    trap 'exit' ERR
+    if [[ $TRAVIS_RUST_VERSION = stable ]]; then
       cargo test --release --no-run
       cargo test --release --features use-mock-routing
     fi
