@@ -20,10 +20,6 @@ branches:
 cache:
   cargo: true
 script:
-  - if [[ $TRAVIS_RUST_VERSION = stable ]]; then
-      cargo test --release --no-run || travis_terminate 1;
-      cargo test --release --features use-mock-routing || travis_terminate 1;
-    fi
-after_script:
+  - . travis_script.sh
   - curl -sSLO https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/run_clippy.sh
   - . run_clippy.sh
