@@ -20,6 +20,6 @@ branches:
 cache:
   cargo: true
 script:
-  - . travis_script.sh
+  - . ci_script.sh
   - curl -sSLO https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/run_clippy.sh
   - . run_clippy.sh

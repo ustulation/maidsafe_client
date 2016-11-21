@@ -24,7 +24,4 @@ configuration:
   - Release
 
 build_script:
-  - cargo test --release --no-run
-
-test_script:
-  - cargo test --release --features use-mock-routing
+  - bash -lc ". ci_script.sh"
