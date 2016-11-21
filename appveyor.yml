@@ -24,4 +24,4 @@ configuration:
   - Release
 
 build_script:
-  - bash -lc ". $APPVEYOR_BUILD_FOLDER/ci_script.sh"
+  - bash -lc "export ABCD=$APPVEYOR_BUILD_FOLDER && ASDF=AA . $APPVEYOR_BUILD_FOLDER/ci_script.sh"
