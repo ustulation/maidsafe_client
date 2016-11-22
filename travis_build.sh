@@ -4,8 +4,8 @@
 set -x
 
 # Stop the script if any command fails
-set -o errtrace
-trap 'exit' ERR
+set -e 
+set -o pipefail
 
 cd $TRAVIS_BUILD_DIR
 
