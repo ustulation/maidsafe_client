@@ -20,7 +20,7 @@ branches:
 cache:
   cargo: true
 script:
-  - travis_wait 40 sh travis_build.sh
+  - travis_wait 40 . travis_build.sh
   - echo test-2
   - curl -sSLO https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/run_clippy.sh
   - sh run_clippy.sh
