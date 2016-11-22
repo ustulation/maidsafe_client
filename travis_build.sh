@@ -7,13 +7,9 @@ set -x
 set -o errtrace
 trap 'exit' ERR
 
-if [[ $TRAVIS = true ]]; then
-  cd $TRAVIS_BUILD_DIR
-else
-  cd $APPVEYOR_BUILD_FOLDER
-fi
+cd $TRAVIS_BUILD_DIR
 
-if [[ ! $TRAVIS_RUST_VERSION = nightly ]]; then
+if [[ $TRAVIS_RUST_VERSION = stable ]]; then
   cargo test --release --no-run
   cargo test --release --features use-mock-routing
 fi

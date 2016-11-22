@@ -24,4 +24,5 @@ configuration:
   - Release
 
 build_script:
-  - bash -lc "APPVEYOR_BUILD_FOLDER=$APPVEYOR_BUILD_FOLDER . $APPVEYOR_BUILD_FOLDER/ci_script.sh"
+  - cargo test --release --no-run
+  - cargo test --release --features use-mock-routing
